@@ -1,0 +1,158 @@
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <title>Node.JS</title>
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="logo"><img src="img/nodejs-1-logo-black-and-white.png" alt=""></div>
+      <h1>Node.JS</h1>
+      <p>NODE.JS WITH AMAN</p>
+      <br>
+
+    </div>
+
+
+    <div class="topnav">
+      <a href="index.html">HOME</a>
+      <a href="index.html">NODE.JS</a>
+      <a href="#about" style="float:right">ABOUT</a>
+    </div>
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>Node.js - First Application </h2>
+          <p>
+          <ul>
+            Before creating an actual "Hello, World!" application using Node.js, let us see the components of a Node.js application. A Node.js application consists of the following three important components −
+            <br><br>
+
+            <li> <b> # Import required modules </b> − We use the require directive to load Node.js modules.</li><br>
+            
+          <li> <b> # Create server</b> − A server which will listen to client's requests similar to Apache HTTP Server.</li><br>
+            
+           <li>  <b> #Read request and return response </b> − The server created in an earlier step will read the HTTP request made by the client which can be a browser or a console and return the response.</li><br>
+          </ul>
+          </p>
+        </div>
+        <div class="card">
+          <h2>Creating Node.js Application</h2>
+          <p> <strong> Step 1 - Import  Required Module </strong> <br> <br>
+            We use the <b> require</b> directive to load the http module and store the returned HTTP instance into an http variable as follows −
+
+            <p style="background-color: grey;padding: 2px; text-align: center; font-size:large;box-shadow: 3px 5px 2px rgb(36, 107, 3);">var http = require("http");
+            </p>
+            <p> <strong>Step 2 - Create Server</strong></p>
+            <br>
+            We use the created http instance and call http.createServer() method to create a server instance and then we bind it at port 8081 using the listen method associated with the server instance. Pass it a function with parameters request and response. Write the sample implementation to always return "Hello World".
+            <p style="background-color: grey;padding: 2px; text-align: center; font-size: large;box-shadow: 3px 5px 2px rgb(36, 107, 3);">http.createServer(function (request, response) 
+              { <br>
+              // Send the HTTP header <br>
+              // HTTP Status: 200 : OK <br>
+              // Content Type: text/plain <br>
+              response.writeHead(200, {'Content-Type': 'text/plain'}); <br>
+              <br>
+              // Send the response body as "Hello World" <br>
+              response.end('Hello World\n'); <br>
+           }).listen(8081); <br>
+           
+           // Console will print the message <br>
+           console.log('Server running at http://127.0.0.1:8081/'); <br>
+            </p>
+            The above code is enough to create an HTTP server which listens, i.e., waits for a request over 8081 port on the local machine.
+
+          </p>
+          <h2>Step 3 - Testing Request & Response</h2>
+          <p>Let's put step 1 and 2 together in a file called main.js and start our HTTP server as shown below −
+            <p style="background-color: grey;padding: 2px; text-align: center; font-size:large;
+            box-shadow: 3px 5px 2px rgb(36, 107, 3);">
+              var http = require("http"); <br>
+
+              http.createServer(function (request, response) {<br>
+                 // Send the HTTP header <br>
+                 // HTTP Status: 200 : OK<br>
+                 // Content Type: text/plain<br>
+                 response.writeHead(200, {'Content-Type': 'text/plain'});<br>
+                 
+                 // Send the response body as "Hello World"<br>
+                 response.end('Hello World\n');<br>
+              }).listen(8081);<br>
+              
+              // Console will print the message<br>
+              console.log('Server running at http://127.0.0.1:8081/');<br>
+            </p>
+            Now execute the main.js to start the server as follows −
+            <p style="background-color: grey;padding: 2px; text-align: center; font-size: large;box-shadow: 3px 5px 2px rgb(36, 107, 3);">$ node main.js </p>
+            Verify the Output. Server has started. <br>
+        
+            <p style="background-color: grey;padding: 2px; text-align: center; font-size: large;box-shadow: 3px 5px 2px rgb(36, 107, 3);">Server running at http://127.0.0.1:8081/</p>
+      
+          </p>
+          <h2>Make a Request to the Node.js Server</h2>
+          <p>Open http://127.0.0.1:8081/ in any browser and observe the following result.</p><br>
+          <br>
+          <br>
+       
+          <i><p>Congratulations, you have your first HTTP server up and running which is responding to all the HTTP requests at port 8081.</p></i>
+     
+          <br><button class="btn"><a href="HOW To install Node.js.html">Next</a></button>
+        </div>
+
+      </div>
+
+      <div class="rightcolumn">
+        <div class="card">
+          <h1><u>About Me</u></h1>
+          <h2>
+            <p style="font-size: xx-large;">Aman Dhiman</p>
+          </h2>
+          <b>
+            <p>dhiman.1999.aman@gmail.com</p>
+          </b>
+          <p>Learning Programer</p>
+          <p>Web Developers</p>
+        </div>
+
+
+        <div class="card">
+          <h3>Follow Me</h3>
+          <div id="social-icon">
+            <a href="https://www.linkedin.com/in/aman-dhiman-9336b91ba/" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/AmanDhimanD" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/RapperAmanD?s=09
+            " target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/onelife_coder/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+
+    <footer class="page-footer font-small cyan darken-3">
+      <div class="footer-topic">
+        <ul>
+          <p><a href="">Html</a></h1>
+            <a href="">CSS</a>
+            <a href="">JavaScript</a>
+        </ul>
+      </div>
+
+
+      </div>
+
+      </div>
+    </footer>
+
+  </body>
+
+</html>
